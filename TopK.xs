@@ -8,7 +8,7 @@
 
 #include "const-c.inc"
 
-MODULE = TopK		PACKAGE = TopK		
+MODULE = TopK		PACKAGE = TopK
 
 INCLUDE: const-xs.inc
 
