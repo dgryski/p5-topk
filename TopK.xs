@@ -17,13 +17,16 @@ topk_new(size)
 	int	size
 
 SV *
-topk_insert(tk, v)
+topk_insert(tk, v, count = 1)
 	topk_t *	tk
 	SV *	v
+	unsigned int count
     CODE:
         STRLEN  vlen = 0;
         char *vptr = SvPVbyte(v, vlen);
-        topk_insert(tk, vptr, vlen);
+        if (count) {
+            topk_insert(tk, vptr, vlen, count);
+        }
         XSRETURN_UNDEF;
     OUTPUT:
         RETVAL
